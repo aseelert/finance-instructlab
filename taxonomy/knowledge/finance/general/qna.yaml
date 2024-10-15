@@ -1,0 +1,132 @@
+version: 3
+domain: banking_finance
+created_by: aseelert
+seed_examples:
+  - context: |
+      A customer is interested in understanding the difference between
+      savings and checking accounts.
+    questions_and_answers:
+      - question: |
+          What is the difference between a savings account and a checking account?
+        answer: |
+          A savings account is used for long-term savings and earns interest,
+          while a checking account is for everyday transactions and generally does
+          not earn interest.
+      - question: |
+          Can I transfer money between my savings and checking accounts?
+        answer: |
+          Yes, you can transfer funds between savings and checking accounts using
+          online banking or by visiting a branch.
+      - question: |
+          Are there fees associated with checking accounts?
+        answer: |
+          Some banks charge fees for checking accounts if you don't maintain a
+          minimum balance or meet specific conditions.
+
+  - context: |
+      A customer is inquiring about applying for a personal loan and needs information
+      on the application process.
+    questions_and_answers:
+      - question: |
+          How do I apply for a personal loan?
+        answer: |
+          To apply for a personal loan, you need to submit an application with
+          your personal and financial details. The lender will review your credit
+          history, income, and debts before approving the loan.
+      - question: |
+          What documents are required for a personal loan application?
+        answer: |
+          You need identification, proof of income, and a credit report to apply
+          for a personal loan.
+      - question: |
+          Can I apply for a loan online?
+        answer: |
+          Yes, most banks offer the option to apply for personal loans online.
+
+  - context: |
+      A customer is confused about how interest rates work for loans.
+    questions_and_answers:
+      - question: |
+          What is an interest rate?
+        answer: |
+          An interest rate is the percentage charged by a lender for borrowing
+          money, calculated annually as a percentage of the loan amount.
+      - question: |
+          What is the difference between a fixed and variable interest rate?
+        answer: |
+          A fixed interest rate stays the same throughout the loan term, while a
+          variable interest rate can change over time based on market conditions.
+      - question: |
+          How does the interest rate affect my monthly payments?
+        answer: |
+          A lower interest rate will reduce your monthly payments, while a higher
+          interest rate will increase the cost of borrowing.
+
+  - context: |
+      A customer is having trouble accessing their online banking account.
+    questions_and_answers:
+      - question: |
+          What should I do if I can’t access my online banking account?
+        answer: |
+          Ensure your internet connection is working, then try resetting your
+          password or contact customer support if the problem persists.
+      - question: |
+          How do I reset my online banking password?
+        answer: |
+          You can reset your password through the bank’s website or mobile app
+          using your security questions or recovery email.
+      - question: |
+          Is it safe to use public Wi-Fi for online banking?
+        answer: |
+          It is not recommended to use public Wi-Fi for online banking due to
+          potential security risks. Always use a private, secure connection.
+
+  - context: |
+      A customer is asking about the Annual Percentage Rate (APR) on credit cards.
+    questions_and_answers:
+      - question: |
+          What is APR?
+        answer: |
+          APR, or Annual Percentage Rate, represents the yearly cost of borrowing,
+          including both interest and fees, expressed as a percentage.
+      - question: |
+          How is APR different from the interest rate?
+        answer: |
+          APR includes both the interest rate and any additional fees, while the
+          interest rate refers only to the percentage charged on the loan balance.
+      - question: |
+          Can I lower the APR on my credit card?
+        answer: |
+          You may be able to lower your APR by improving your credit score or
+          negotiating with your bank after a period of on-time payments.
+
+  - context: |
+      A customer is confused about the term "mortgage" and its implications.
+    questions_and_answers:
+      - question: |
+          What is a mortgage?
+        answer: |
+          A mortgage is a loan used to purchase a home, where the property itself
+          serves as collateral. The borrower repays the loan in monthly
+          installments, typically over 15, 20, or 30 years.
+      - question: |
+          What is the difference between a fixed-rate and adjustable-rate mortgage?
+        answer: |
+          A fixed-rate mortgage has the same interest rate throughout the loan term,
+          while an adjustable-rate mortgage (ARM) may change based on market
+          conditions.
+      - question: |
+          Can I pay off my mortgage early?
+        answer: |
+          Many mortgages allow early repayment, but some may charge a prepayment
+          penalty. Check with your lender for the terms.
+
+document_outline: |
+  This knowledge base provides comprehensive banking and financial information
+  for customers seeking answers about loans, interest rates, account types, and
+  credit terms.
+document:
+  repo: https://github.com/aseelert/finance-instructlab
+  commit: 24b6363159da6a3b55350f512756205a2d94ed66
+  patterns:
+    - banking-informations.md

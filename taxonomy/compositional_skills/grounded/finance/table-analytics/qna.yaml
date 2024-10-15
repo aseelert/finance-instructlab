@@ -1,0 +1,78 @@
+version: 2
+created_by: bankingteam
+task_description: |
+    This skill enables the virtual banking agent to assist customers with banking
+    inquiries using clear and professional language.
+seed_examples:
+  - context: |
+      | **Account**  | **Balance**  | **Loan** | **Rate** |
+      |--------------|--------------|----------|----------|
+      | Checking     | $3,000       | -        | -        |
+      | Savings      | $10,000      | Personal | 4.5%     |
+    question: |
+      What is the interest rate on the personal loan?
+    answer: |
+      The interest rate on the personal loan is 4.5%.
+  - context: |
+      | **Name**     | **Balance**  | **Card**  | **Limit** |
+      |--------------|--------------|-----------|-----------|
+      | George       | $5,000       | Credit    | $10,000   |
+      | Sarah        | $2,300       | Debit     | N/A       |
+    question: |
+      What is George's credit card limit?
+    answer: |
+      George's credit card limit is $10,000.
+  - context: |
+      | **Term**     | **Definition**                          |
+      |--------------|-----------------------------------------|
+      | APR          | Annual Percentage Rate                  |
+      | Collateral   | An asset pledged for a loan             |
+    question: |
+      What is collateral in a loan context?
+    answer: |
+      Collateral is an asset that is pledged by the borrower to secure a loan.
+  - context: |
+      | **Name**     | **Date**     | **Amount**   | **Type**    |
+      |--------------|--------------|--------------|-------------|
+      | Payment      | 15 Sep 2024  | $500         | Transfer    |
+      | Deposit      | 10 Sep 2024  | $1,000       | Checking    |
+    question: |
+      What was the most recent transaction?
+    answer: |
+      The most recent transaction was a $500 transfer on 15 Sep 2024.
+  - context: |
+      | **Rate Type** | **Loan**      | **Rate** |
+      |---------------|---------------|----------|
+      | Fixed Rate    | Home Loan     | 3.75%    |
+      | Variable Rate | Personal Loan | 4.5%     |
+    question: |
+      What is the interest rate for the home loan?
+    answer: |
+      The interest rate for the home loan is 3.75%.
+  - context: |
+      | **Account Type** | **Balance**  | **Interest Rate** |
+      |------------------|--------------|-------------------|
+      | Savings          | $10,000      | 1.5%              |
+      | Checking         | $3,000       | 0.01%             |
+    question: |
+      What is the interest rate on my savings account?
+    answer: |
+      The interest rate on your savings account is 1.5%.
+  - context: |
+      | **Loan Type**    | **Amount**   | **Payment Due** |
+      |------------------|--------------|-----------------|
+      | Home Loan        | $200,000     | 1 Oct 2024      |
+      | Personal Loan    | $10,000      | 15 Oct 2024     |
+    question: |
+      When is my next home loan payment due?
+    answer: |
+      Your next home loan payment is due on 1 Oct 2024.
+  - context: |
+      | **Term**         | **Meaning**                        |
+      |------------------|-----------------------------------|
+      | Compound Interest| Interest on principal + interest  |
+      | Fixed Interest   | Interest rate that doesn't change |
+    question: |
+      What is compound interest?
+    answer: |
+      Compound interest is interest on both the principal and any accumulated interest.
