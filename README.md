@@ -99,6 +99,13 @@ ilab data generate \
  --model ibm/granite-20b-multilingual
  ```
 
+#### Monitor the Proxy
+```bash
+docker logs -f watsonxai-endpoint
+```
+<img width="1724" alt="image" src="https://github.com/user-attachments/assets/3698f84f-9a26-490a-90bc-7a3259cbbbb3">
+
+
 #### Instructlab Cleanup
 ```bash
 # Remove all files in the specified InstructLab directories
