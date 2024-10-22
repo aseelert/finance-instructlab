@@ -103,8 +103,7 @@ ilab data generate \
 ```bash
 docker logs -f watsonxai-endpoint
 ```
-<img width="1724" alt="image" src="https://github.com/user-attachments/assets/f78f7dcf-77fe-4e14-8a45-926141fa6223">
-
+<img width="1723" alt="image" src="https://github.com/user-attachments/assets/c395cc80-706c-4c02-bf83-a0ee936987a7">
 
 
 #### Instructlab Cleanup
