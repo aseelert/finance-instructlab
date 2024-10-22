@@ -56,13 +56,16 @@ ilab model list
 ```bash
 cd ~/instructlab-finance
 git clone https://github.com/aseelert/finance-instructlab.git
-
+```
+```bash
 mkdir -p ~/.local/share/instructlab/taxonomy/compositional_skills/grounded/finance/table-analytics
 mkdir -p ~/.local/share/instructlab/taxonomy/knowledge/finance/general
-
-cp ~/.local/share/instructlab/finance-instructlab/taxonomy/compositional_skills/grounded/finance/table-analytics/qna.yaml \
+```
+```bash
+cp finance-instructlab/taxonomy/knowledge/finance/general/qna.yaml \
 ~/.local/share/instructlab/taxonomy/compositional_skills/grounded/finance/table-analytics/qna.yaml
-cp ~/.local/share/instructlab/finance-instructlab/taxonomy/knowledge/finance/general/qna.yaml \
+
+cp finance-instructlab/taxonomy/knowledge/finance/general/qna.yaml \
 ~/.local/share/instructlab/taxonomy/knowledge/finance/general/qna.yaml
 ```
 
