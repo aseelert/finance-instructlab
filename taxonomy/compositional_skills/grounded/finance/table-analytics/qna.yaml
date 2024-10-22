@@ -4,75 +4,982 @@ task_description: |
     This skill enables the virtual banking agent to assist customers with banking
     inquiries using clear and professional language.
 seed_examples:
+  # US Examples
   - context: |
-      | **Account**  | **Balance**  | **Loan** | **Rate** |
-      |--------------|--------------|----------|----------|
-      | Checking     | $3,000       | -        | -        |
-      | Savings      | $10,000      | Personal | 4.5%     |
+      | **Account** | **Balance** | **Loan**    | **Rate** |
+      |------------|-------------|-------------|----------|
+      | Checking   | $3,000      | -           | -        |
+      | Savings    | $10,000     | Personal    | 4.5%     |
     question: |
       What is the interest rate on the personal loan?
     answer: |
       The interest rate on the personal loan is 4.5%.
+
   - context: |
-      | **Name**     | **Balance**  | **Card**  | **Limit** |
-      |--------------|--------------|-----------|-----------|
-      | George       | $5,000       | Credit    | $10,000   |
-      | Sarah        | $2,300       | Debit     | N/A       |
+      | **Name**  | **Balance** | **Card** | **Limit** |
+      |----------|-------------|----------|-----------|
+      | George   | $5,000      | Credit   | $10,000   |
+      | Sarah    | $2,300      | Debit    | N/A       |
     question: |
       What is George's credit card limit?
     answer: |
       George's credit card limit is $10,000.
+
   - context: |
-      | **Term**     | **Definition**                          |
-      |--------------|-----------------------------------------|
-      | APR          | Annual Percentage Rate                  |
-      | Collateral   | An asset pledged for a loan             |
+      | **Term**          | **Definition**                        |
+      |-------------------|---------------------------------------|
+      | APR               | Annual Percentage Rate                |
+      | Collateral        | An asset pledged for a loan           |
     question: |
       What is collateral in a loan context?
     answer: |
       Collateral is an asset that is pledged by the borrower to secure a loan.
+
   - context: |
-      | **Name**     | **Date**     | **Amount**   | **Type**    |
-      |--------------|--------------|--------------|-------------|
-      | Payment      | 15 Sep 2024  | $500         | Transfer    |
-      | Deposit      | 10 Sep 2024  | $1,000       | Checking    |
+      | **Name**   | **Date**      | **Amount** | **Type**  |
+      |------------|---------------|------------|-----------|
+      | Payment    | 15 Sep 2024   | $500       | Transfer  |
+      | Deposit    | 10 Sep 2024   | $1,000     | Checking  |
     question: |
       What was the most recent transaction?
     answer: |
       The most recent transaction was a $500 transfer on 15 Sep 2024.
+
   - context: |
-      | **Rate Type** | **Loan**      | **Rate** |
-      |---------------|---------------|----------|
-      | Fixed Rate    | Home Loan     | 3.75%    |
-      | Variable Rate | Personal Loan | 4.5%     |
+      | **Rate Type**  | **Loan**      | **Rate** |
+      |----------------|---------------|----------|
+      | Fixed Rate     | Home Loan     | 3.75%    |
+      | Variable Rate  | Personal Loan | 4.5%     |
     question: |
       What is the interest rate for the home loan?
     answer: |
       The interest rate for the home loan is 3.75%.
+
   - context: |
-      | **Account Type** | **Balance**  | **Interest Rate** |
-      |------------------|--------------|-------------------|
-      | Savings          | $10,000      | 1.5%              |
-      | Checking         | $3,000       | 0.01%             |
+      | **Account Type** | **Balance** | **Interest Rate** |
+      |------------------|-------------|-------------------|
+      | Savings          | $10,000     | 1.5%              |
+      | Checking         | $3,000      | 0.01%             |
     question: |
       What is the interest rate on my savings account?
     answer: |
       The interest rate on your savings account is 1.5%.
+
   - context: |
-      | **Loan Type**    | **Amount**   | **Payment Due** |
-      |------------------|--------------|-----------------|
-      | Home Loan        | $200,000     | 1 Oct 2024      |
-      | Personal Loan    | $10,000      | 15 Oct 2024     |
+      | **Loan Type**  | **Amount** | **Payment Due** |
+      |----------------|------------|------------------|
+      | Home Loan      | $200,000   | 1 Oct 2024       |
+      | Personal Loan  | $10,000    | 15 Oct 2024      |
     question: |
       When is my next home loan payment due?
     answer: |
       Your next home loan payment is due on 1 Oct 2024.
+
   - context: |
-      | **Term**         | **Meaning**                        |
-      |------------------|-----------------------------------|
-      | Compound Interest| Interest on principal + interest  |
-      | Fixed Interest   | Interest rate that doesn't change |
+      | **Term**           | **Meaning**                        |
+      |--------------------|-------------------------------------|
+      | Compound Interest  | Interest on principal + interest    |
+      | Fixed Interest     | Interest rate that doesn't change   |
     question: |
       What is compound interest?
     answer: |
       Compound interest is interest on both the principal and any accumulated interest.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Grocery         | 02 Oct 2024  | $150       | Essentials   |
+      | Entertainment   | 03 Oct 2024  | $200       | Leisure      |
+      | Entertainment   | 02 Oct 2024  | $200       | Leisure      |
+      | Entertainment   | 01 Oct 2024  | $200       | Leisure      |
+    question: |
+      How much was spent on entertainment in Oct 2024?
+    answer: |
+      $600 was spent on entertainment in Oct 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $2,500      | Personal    | 0.01%        |
+      | Savings    | $15,000     | Business    | 1.8%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 1.8%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN1001            | 01 Oct 2024  | $750       | Deposit    |
+      | TXN1002            | 05 Oct 2024  | $300       | Withdrawal |
+      | TXN1003            | 10 Oct 2024  | $450       | Transfer   |
+      | TXN1004            | 15 Oct 2024  | $500       | Payment    |
+    question: |
+      What is the total amount of deposits made in October 2024?
+    answer: |
+      The total amount of deposits made in October 2024 is $750.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Stock A        | $5,000     | 8%               | 01 Jan 2025        |
+      | Bond B         | $10,000    | 5%               | 01 Jun 2025        |
+    question: |
+      What is the return rate for Bond B?
+    answer: |
+      The return rate for Bond B is 5%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $1,200      | Personal    | 0.01%        |
+      | Savings    | $8,500      | Business    | 1.5%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 1.5%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Rent            | 01 Oct 2024  | $1,200     | Housing      |
+      | Utilities       | 03 Oct 2024  | $300       | Essentials   |
+      | Internet        | 05 Oct 2024  | $100       | Essentials   |
+      | Grocery         | 07 Oct 2024  | $250       | Essentials   |
+    question: |
+      How much was spent on essentials in Oct 2024?
+    answer: |
+      $650 was spent on essentials in Oct 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $4,000      | Personal    | 0.01%        |
+      | Savings    | $12,000     | Business    | 1.6%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 1.6%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN2001            | 02 Oct 2024  | $1,000     | Deposit    |
+      | TXN2002            | 06 Oct 2024  | $400       | Withdrawal |
+      | TXN2003            | 12 Oct 2024  | $600       | Transfer   |
+      | TXN2004            | 18 Oct 2024  | $700       | Payment    |
+    question: |
+      What is the total amount of withdrawals made in October 2024?
+    answer: |
+      The total amount of withdrawals made in October 2024 is $400.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Stock C        | $7,000     | 10%              | 01 Feb 2025        |
+      | Bond D         | $15,000    | 6%               | 01 Aug 2025        |
+    question: |
+      What is the return rate for Stock C?
+    answer: |
+      The return rate for Stock C is 10%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $3,500      | Personal    | 0.01%        |
+      | Savings    | $20,000     | Business    | 2.0%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 2.0%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Travel          | 04 Oct 2024  | $800       | Leisure      |
+      | Dining          | 08 Oct 2024  | $150       | Leisure      |
+      | Entertainment   | 10 Oct 2024  | $200       | Leisure      |
+      | Travel          | 14 Oct 2024  | $700       | Leisure      |
+    question: |
+      How much was spent on leisure in Oct 2024?
+    answer: |
+      $1,850 was spent on leisure in Oct 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $6,000      | Personal    | 0.01%        |
+      | Savings    | $25,000     | Business    | 2.2%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 2.2%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN3001            | 03 Oct 2024  | $1,500     | Deposit    |
+      | TXN3002            | 07 Oct 2024  | $500       | Withdrawal |
+      | TXN3003            | 11 Oct 2024  | $900       | Transfer   |
+      | TXN3004            | 19 Oct 2024  | $1,200     | Payment    |
+    question: |
+      What is the total amount of deposits made in October 2024?
+    answer: |
+      The total amount of deposits made in October 2024 is $1,500.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Stock E        | $10,000    | 12%              | 01 Mar 2025        |
+      | Bond F         | $20,000    | 7%               | 01 Sep 2025        |
+    question: |
+      What is the return rate for Bond F?
+    answer: |
+      The return rate for Bond F is 7%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $7,500      | Personal    | 0.01%        |
+      | Savings    | $30,000     | Business    | 2.5%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 2.5%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Utilities       | 05 Oct 2024  | $300       | Essentials   |
+      | Rent            | 09 Oct 2024  | $1,500     | Housing      |
+      | Internet        | 13 Oct 2024  | $100       | Essentials   |
+      | Grocery         | 17 Oct 2024  | $400       | Essentials   |
+    question: |
+      How much was spent on essentials in Oct 2024?
+    answer: |
+      $800 was spent on essentials in Oct 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $8,000      | Personal    | 0.01%        |
+      | Savings    | $35,000     | Business    | 2.8%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 2.8%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN4001            | 04 Oct 2024  | $2,000     | Deposit    |
+      | TXN4002            | 08 Oct 2024  | $600       | Withdrawal |
+      | TXN4003            | 14 Oct 2024  | $1,200     | Transfer   |
+      | TXN4004            | 20 Oct 2024  | $1,800     | Payment    |
+    question: |
+      What is the total amount of withdrawals made in October 2024?
+    answer: |
+      The total amount of withdrawals made in October 2024 is $600.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Stock G        | $12,000    | 15%              | 01 Apr 2025        |
+      | Bond H         | $25,000    | 8%               | 01 Oct 2025        |
+    question: |
+      What is the return rate for Stock G?
+    answer: |
+      The return rate for Stock G is 15%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $9,000      | Personal    | 0.01%        |
+      | Savings    | $40,000     | Business    | 3.0%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 3.0%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Travel          | 06 Oct 2024  | $1,000     | Leisure      |
+      | Dining          | 10 Oct 2024  | $300       | Leisure      |
+      | Entertainment   | 14 Oct 2024  | $400       | Leisure      |
+      | Travel          | 18 Oct 2024  | $1,200     | Leisure      |
+    question: |
+      How much was spent on leisure in Oct 2024?
+    answer: |
+      $2,900 was spent on leisure in Oct 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $10,000     | Personal    | 0.01%        |
+      | Savings    | $50,000     | Business    | 3.5%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 3.5%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN5001            | 05 Oct 2024  | $2,500     | Deposit    |
+      | TXN5002            | 09 Oct 2024  | $700       | Withdrawal |
+      | TXN5003            | 15 Oct 2024  | $1,500     | Transfer   |
+      | TXN5004            | 21 Oct 2024  | $2,000     | Payment    |
+    question: |
+      What is the total amount of deposits made in October 2024?
+    answer: |
+      The total amount of deposits made in October 2024 is $2,500.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Stock I        | $15,000    | 18%              | 01 May 2025        |
+      | Bond J         | $30,000    | 10%              | 01 Nov 2025        |
+    question: |
+      What is the return rate for Bond J?
+    answer: |
+      The return rate for Bond J is 10%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Checking   | $11,000     | Personal    | 0.01%        |
+      | Savings    | $60,000     | Business    | 3.8%         |
+    question: |
+      What is the interest rate for the business savings account?
+    answer: |
+      The interest rate for the business savings account is 3.8%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Utilities       | 07 Oct 2024  | $400       | Essentials   |
+      | Rent            | 11 Oct 2024  | $1,800     | Housing      |
+      | Internet        | 15 Oct 2024  | $150       | Essentials   |
+      | Grocery         | 19 Oct 2024  | $500       | Essentials   |
+    question: |
+      How much was spent on essentials in Oct 2024?
+    answer: |
+      $1,050 was spent on essentials in Oct 2024.
+
+  # German Examples
+  - context: |
+      | **Name**      | **Balance** | **Kredit** | **Limit** |
+      |---------------|-------------|------------|-----------|
+      | Anna          | €4,000      | Kreditkarte| €8,000    |
+      | Lukas         | €1,500      | Debitkarte | N/A       |
+    question: |
+      What is Anna's Kreditkarte limit?
+    answer: |
+      Anna's Kreditkarte limit is €8,000.
+
+  - context: |
+      | **Name**      | **Schulden** | **Datum**       | **Betrag** |
+      |---------------|--------------|-----------------|------------|
+      | Alex          | 2            | 14 Sep 2024      | €5,000     |
+      | Maria         | 1            | 20 Sep 2024      | €3,000     |
+    question: |
+      How much debt does Alex have after 14 Sep 2024?
+    answer: |
+      Alex has €5,000 in debt after 14 Sep 2024.
+
+  - context: |
+      | **Begriff**          | **Definition**                        |
+      |----------------------|---------------------------------------|
+      | SCHUFA               | German credit score system            |
+      | Sicherheit           | An asset pledged for a loan           |
+    question: |
+      What is Sicherheit in a loan context?
+    answer: |
+      Sicherheit is an asset that is pledged by the borrower to secure a loan.
+
+  - context: |
+      | **Name**   | **Datum**       | **Betrag** | **Art**      |
+      |------------|-----------------|------------|--------------|
+      | Zahlung    | 15 Sep 2024     | €500       | Überweisung  |
+      | Einzahlung | 10 Sep 2024     | €1,000     | Girokonto    |
+    question: |
+      What was the most recent transaction?
+    answer: |
+      The most recent transaction was a €500 Überweisung on 15 Sep 2024.
+
+  - context: |
+      | **Zinssatz Typ** | **Darlehen**   | **Zinssatz** |
+      |-------------------|----------------|--------------|
+      | Festzins          | Hypothek       | 3.5%         |
+      | Variabler Zinssatz| Privatkredit   | 4.5%         |
+    question: |
+      What is the interest rate for the Hypothek?
+    answer: |
+      The interest rate for the Hypothek is 3.5%.
+
+  - context: |
+      | **Kontotyp**   | **Saldo**  | **Zinssatz** |
+      |----------------|------------|--------------|
+      | Sparkonto      | €10,000    | 1.2%         |
+      | Girokonto      | €3,000     | 0.01%        |
+    question: |
+      What is the interest rate on my Sparkonto?
+    answer: |
+      The interest rate on your Sparkonto is 1.2%.
+
+  - context: |
+      | **Darlehen Typ** | **Betrag** | **Fälligkeit** |
+      |------------------|------------|-----------------|
+      | Hypothek         | €200,000   | 1 Okt 2024      |
+      | Privatkredit     | €10,000    | 15 Okt 2024     |
+    question: |
+      When is my next Hypothek payment due?
+    answer: |
+      Your next Hypothek payment is due on 1 Okt 2024.
+
+  - context: |
+      | **Begriff**           | **Bedeutung**                       |
+      |-----------------------|-------------------------------------|
+      | Zinseszins            | Zinsen auf Kapital + Zinsen         |
+      | Fester Zinssatz       | Zinssatz, der sich nicht ändert     |
+    question: |
+      What is Zinseszins?
+    answer: |
+      Zinseszins is interest on both the principal and any accumulated interest.
+
+  - context: |
+      | **Transaktion** | **Datum**     | **Betrag** | **Kategorie** |
+      |-----------------|--------------|------------|--------------|
+      | Lebensmittel    | 02 Okt 2024  | €150       | Notwendig    |
+      | Unterhaltung    | 03 Okt 2024  | €200       | Freizeit     |
+      | Unterhaltung    | 02 Okt 2024  | €200       | Freizeit     |
+      | Unterhaltung    | 01 Okt 2024  | €200       | Freizeit     |
+    question: |
+      How much was spent on Unterhaltung in Okt 2024?
+    answer: |
+      €600 was spent on Unterhaltung in Okt 2024.
+
+  - context: |
+      | **Name**      | **Schulden** | **Datum**       | **Betrag** |
+      |---------------|--------------|-----------------|------------|
+      | Ben           | 3            | 18 Sep 2024      | €7,500     |
+      | Clara         | 2            | 25 Sep 2024      | €4,000     |
+    question: |
+      How much debt does Ben have after 18 Sep 2024?
+    answer: |
+      Ben has €7,500 in debt after 18 Sep 2024.
+
+  - context: |
+      | **Begriff**          | **Definition**                        |
+      |----------------------|---------------------------------------|
+      | SCHUFA               | German credit score system            |
+      | Darlehenssicherheit  | An asset pledged for a loan           |
+    question: |
+      What is Darlehenssicherheit in a loan context?
+    answer: |
+      Darlehenssicherheit is an asset that is pledged by the borrower to secure a loan.
+
+  - context: |
+      | **Name**   | **Datum**       | **Betrag** | **Art**      |
+      |------------|-----------------|------------|--------------|
+      | Zahlung    | 20 Sep 2024     | €700       | Überweisung  |
+      | Einzahlung | 15 Sep 2024     | €1,500     | Girokonto    |
+    question: |
+      What was the most recent transaction?
+    answer: |
+      The most recent transaction was a €700 Überweisung on 20 Sep 2024.
+
+  - context: |
+      | **Zinssatz Typ** | **Darlehen**   | **Zinssatz** |
+      |-------------------|----------------|--------------|
+      | Festzins          | Baukredit      | 3.8%         |
+      | Variabler Zinssatz| Privatkredit   | 5.0%         |
+    question: |
+      What is the interest rate for the Baukredit?
+    answer: |
+      The interest rate for the Baukredit is 3.8%.
+
+  - context: |
+      | **Kontotyp**   | **Saldo**  | **Zinssatz** |
+      |----------------|------------|--------------|
+      | Sparkonto      | €20,000    | 1.6%         |
+      | Girokonto      | €5,000     | 0.01%        |
+    question: |
+      What is the interest rate on my Sparkonto?
+    answer: |
+      The interest rate on your Sparkonto is 1.6%.
+
+  - context: |
+      | **Darlehen Typ** | **Betrag** | **Fälligkeit** |
+      |------------------|------------|-----------------|
+      | Baukredit        | €250,000   | 1 Okt 2024      |
+      | Privatkredit     | €15,000    | 15 Okt 2024     |
+    question: |
+      When is my next Baukredit payment due?
+    answer: |
+      Your next Baukredit payment is due on 1 Okt 2024.
+
+  - context: |
+      | **Begriff**           | **Bedeutung**                        |
+      |-----------------------|--------------------------------------|
+      | Zinseszins            | Zinsen auf Kapital + Zinsen          |
+      | Fester Zinssatz       | Zinssatz, der sich nicht ändert      |
+    question: |
+      What is Zinseszins?
+    answer: |
+      Zinseszins is interest on both the principal and any accumulated interest.
+
+  - context: |
+      | **Transaktion** | **Datum**     | **Betrag** | **Kategorie** |
+      |-----------------|--------------|------------|--------------|
+      | Miete           | 01 Okt 2024  | €1,500     | Wohnen       |
+      | Nebenkosten     | 04 Okt 2024  | €300       | Notwendig    |
+      | Internet        | 08 Okt 2024  | €150       | Notwendig    |
+      | Lebensmittel    | 12 Okt 2024  | €400       | Notwendig    |
+    question: |
+      How much was spent on Notwendig in Okt 2024?
+    answer: |
+      €850 was spent on Notwendig in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €6,000      | Personal    | 0.01%        |
+      | Sparkonto  | €30,000     | Business    | 2.0%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 2.0%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN6001            | 06 Oct 2024  | €2,500     | Einzahlung |
+      | TXN6002            | 10 Oct 2024  | €800       | Auszahlung |
+      | TXN6003            | 16 Oct 2024  | €1,200     | Überweisung|
+      | TXN6004            | 22 Oct 2024  | €2,000     | Zahlung    |
+    question: |
+      What is the total amount of Einzahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Einzahlungen made in Oktober 2024 is €2,500.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie A        | €5,000     | 8%               | 01 Jan 2025        |
+      | Anleihe B      | €10,000    | 5%               | 01 Jun 2025        |
+    question: |
+      What is the return rate for Anleihe B?
+    answer: |
+      The return rate for Anleihe B is 5%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €7,500      | Personal    | 0.01%        |
+      | Sparkonto  | €40,000     | Business    | 2.5%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 2.5%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Reisen          | 06 Okt 2024  | €1,000     | Freizeit     |
+      | Essen gehen     | 10 Okt 2024  | €300       | Freizeit     |
+      | Unterhaltung    | 14 Okt 2024  | €400       | Freizeit     |
+      | Reisen          | 18 Okt 2024  | €1,200     | Freizeit     |
+    question: |
+      How much was spent on Freizeit in Okt 2024?
+    answer: |
+      €2,900 was spent on Freizeit in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €8,000      | Personal    | 0.01%        |
+      | Sparkonto  | €50,000     | Business    | 3.5%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 3.5%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN7001            | 07 Oct 2024  | €3,000     | Einzahlung |
+      | TXN7002            | 11 Oct 2024  | €1,000     | Auszahlung |
+      | TXN7003            | 17 Oct 2024  | €2,000     | Überweisung|
+      | TXN7004            | 23 Oct 2024  | €2,500     | Zahlung    |
+    question: |
+      What is the total amount of Auszahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Auszahlungen made in Oktober 2024 is €1,000.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie C        | €7,000     | 10%              | 01 Feb 2025        |
+      | Anleihe D      | €15,000    | 6%               | 01 Aug 2025        |
+    question: |
+      What is the return rate for Aktie C?
+    answer: |
+      The return rate for Aktie C is 10%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €9,000      | Personal    | 0.01%        |
+      | Sparkonto  | €60,000     | Business    | 3.8%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 3.8%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Nebenkosten     | 05 Okt 2024  | €400       | Notwendig    |
+      | Miete           | 09 Okt 2024  | €1,800     | Wohnen       |
+      | Internet        | 13 Okt 2024  | €150       | Notwendig    |
+      | Lebensmittel    | 17 Okt 2024  | €500       | Notwendig    |
+    question: |
+      How much was spent on Notwendig in Okt 2024?
+    answer: |
+      €1,050 was spent on Notwendig in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €10,000     | Personal    | 0.01%        |
+      | Sparkonto  | €70,000     | Business    | 4.0%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 4.0%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN8001            | 08 Oct 2024  | €3,500     | Einzahlung |
+      | TXN8002            | 12 Oct 2024  | €1,200     | Auszahlung |
+      | TXN8003            | 18 Oct 2024  | €2,500     | Überweisung|
+      | TXN8004            | 24 Oct 2024  | €3,000     | Zahlung    |
+    question: |
+      What is the total amount of Einzahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Einzahlungen made in Oktober 2024 is €3,500.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie D        | €9,000     | 20%              | 01 May 2025        |
+      | Anleihe E      | €20,000    | 9%               | 01 Nov 2025        |
+    question: |
+      What is the return rate for Anleihe E?
+    answer: |
+      The return rate for Anleihe E is 9%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €11,000     | Personal    | 0.01%        |
+      | Sparkonto  | €80,000     | Business    | 4.2%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 4.2%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Reisen          | 10 Okt 2024  | €1,500     | Freizeit     |
+      | Essen gehen     | 14 Okt 2024  | €400       | Freizeit     |
+      | Unterhaltung    | 18 Okt 2024  | €600       | Freizeit     |
+      | Reisen          | 22 Okt 2024  | €2,000     | Freizeit     |
+    question: |
+      How much was spent on Freizeit in Okt 2024?
+    answer: |
+      €4,500 was spent on Freizeit in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €12,000     | Personal    | 0.01%        |
+      | Sparkonto  | €90,000     | Business    | 4.5%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 4.5%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN9001            | 09 Oct 2024  | €4,000     | Einzahlung |
+      | TXN9002            | 13 Oct 2024  | €1,500     | Auszahlung |
+      | TXN9003            | 19 Oct 2024  | €3,000     | Überweisung|
+      | TXN9004            | 25 Oct 2024  | €3,500     | Zahlung    |
+    question: |
+      What is the total amount of Auszahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Auszahlungen made in Oktober 2024 is €1,500.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie F        | €11,000    | 25%              | 01 Jun 2025        |
+      | Anleihe G      | €35,000    | 12%              | 01 Dec 2025        |
+    question: |
+      What is the return rate for Aktie F?
+    answer: |
+      The return rate for Aktie F is 25%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €13,000     | Personal    | 0.01%        |
+      | Sparkonto  | €100,000    | Business    | 5.0%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 5.0%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Nebenkosten     | 06 Okt 2024  | €500       | Notwendig    |
+      | Miete           | 10 Okt 2024  | €2,000     | Wohnen       |
+      | Internet        | 14 Okt 2024  | €200       | Notwendig    |
+      | Lebensmittel    | 18 Okt 2024  | €600       | Notwendig    |
+    question: |
+      How much was spent on Notwendig in Okt 2024?
+    answer: |
+      €1,300 was spent on Notwendig in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €14,000     | Personal    | 0.01%        |
+      | Sparkonto  | €110,000    | Business    | 5.2%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 5.2%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN10001           | 10 Oct 2024  | €5,000     | Einzahlung |
+      | TXN10002           | 14 Oct 2024  | €2,000     | Auszahlung |
+      | TXN10003           | 20 Oct 2024  | €4,000     | Überweisung|
+      | TXN10004           | 26 Oct 2024  | €4,500     | Zahlung    |
+    question: |
+      What is the total amount of Einzahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Einzahlungen made in Oktober 2024 is €5,000.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie G        | €13,000    | 30%              | 01 Jul 2025        |
+      | Anleihe H      | €40,000    | 15%              | 01 Jan 2026        |
+    question: |
+      What is the return rate for Anleihe H?
+    answer: |
+      The return rate for Anleihe H is 15%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €15,000     | Personal    | 0.01%        |
+      | Sparkonto  | €120,000    | Business    | 5.5%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 5.5%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Nebenkosten     | 07 Okt 2024  | €600       | Notwendig    |
+      | Miete           | 11 Okt 2024  | €2,500     | Wohnen       |
+      | Internet        | 15 Okt 2024  | €250       | Notwendig    |
+      | Lebensmittel    | 19 Okt 2024  | €700       | Notwendig    |
+    question: |
+      How much was spent on Notwendig in Okt 2024?
+    answer: |
+      €1,550 was spent on Notwendig in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €16,000     | Personal    | 0.01%        |
+      | Sparkonto  | €130,000    | Business    | 5.8%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 5.8%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN11001           | 11 Oct 2024  | €6,000     | Einzahlung |
+      | TXN11002           | 15 Oct 2024  | €2,500     | Auszahlung |
+      | TXN11003           | 21 Oct 2024  | €5,000     | Überweisung|
+      | TXN11004           | 27 Oct 2024  | €5,500     | Zahlung    |
+    question: |
+      What is the total amount of Auszahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Auszahlungen made in Oktober 2024 is €2,500.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie H        | €15,000    | 35%              | 01 Aug 2025        |
+      | Anleihe I      | €45,000    | 18%              | 01 Feb 2026        |
+    question: |
+      What is the return rate for Aktie H?
+    answer: |
+      The return rate for Aktie H is 35%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €17,000     | Personal    | 0.01%        |
+      | Sparkonto  | €140,000    | Business    | 6.0%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 6.0%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Nebenkosten     | 08 Okt 2024  | €700       | Notwendig    |
+      | Miete           | 12 Okt 2024  | €3,000     | Wohnen       |
+      | Internet        | 16 Okt 2024  | €300       | Notwendig    |
+      | Lebensmittel    | 20 Okt 2024  | €800       | Notwendig    |
+    question: |
+      How much was spent on Notwendig in Okt 2024?
+    answer: |
+      €1,800 was spent on Notwendig in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €18,000     | Personal    | 0.01%        |
+      | Sparkonto  | €150,000    | Business    | 6.5%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 6.5%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN12001           | 12 Oct 2024  | €7,000     | Einzahlung |
+      | TXN12002           | 16 Oct 2024  | €3,000     | Auszahlung |
+      | TXN12003           | 22 Oct 2024  | €6,000     | Überweisung|
+      | TXN12004           | 28 Oct 2024  | €7,500     | Zahlung    |
+    question: |
+      What is the total amount of Einzahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Einzahlungen made in Oktober 2024 is €7,000.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie I        | €17,000    | 40%              | 01 Sep 2025        |
+      | Anleihe J      | €50,000    | 20%              | 01 Mar 2026        |
+    question: |
+      What is the return rate for Anleihe J?
+    answer: |
+      The return rate for Anleihe J is 20%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €19,000     | Personal    | 0.01%        |
+      | Sparkonto  | €160,000    | Business    | 6.8%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 6.8%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Nebenkosten     | 09 Okt 2024  | €800       | Notwendig    |
+      | Miete           | 13 Okt 2024  | €3,500     | Wohnen       |
+      | Internet        | 17 Okt 2024  | €350       | Notwendig    |
+      | Lebensmittel    | 21 Okt 2024  | €900       | Notwendig    |
+    question: |
+      How much was spent on Notwendig in Okt 2024?
+    answer: |
+      €2,050 was spent on Notwendig in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €20,000     | Personal    | 0.01%        |
+      | Sparkonto  | €170,000    | Business    | 7.0%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 7.0%.
+
+  - context: |
+      | **Transaction ID** | **Date**     | **Amount** | **Type**   |
+      |--------------------|--------------|------------|------------|
+      | TXN13001           | 13 Oct 2024  | €8,000     | Einzahlung |
+      | TXN13002           | 17 Oct 2024  | €4,000     | Auszahlung |
+      | TXN13003           | 23 Oct 2024  | €7,000     | Überweisung|
+      | TXN13004           | 29 Oct 2024  | €8,500     | Zahlung    |
+    question: |
+      What is the total amount of Auszahlungen made in Oktober 2024?
+    answer: |
+      The total amount of Auszahlungen made in Oktober 2024 is €4,000.
+
+  - context: |
+      | **Investment** | **Amount** | **Return Rate** | **Maturity Date** |
+      |----------------|------------|------------------|--------------------|
+      | Aktie J        | €19,000    | 45%              | 01 Oct 2025        |
+      | Anleihe K      | €55,000    | 22%              | 01 Apr 2026        |
+    question: |
+      What is the return rate for Aktie J?
+    answer: |
+      The return rate for Aktie J is 45%.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €21,000     | Personal    | 0.01%        |
+      | Sparkonto  | €180,000    | Business    | 7.5%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 7.5%.
+
+  - context: |
+      | **Transaction** | **Date**     | **Amount** | **Category** |
+      |-----------------|--------------|------------|--------------|
+      | Nebenkosten     | 10 Okt 2024  | €900       | Notwendig    |
+      | Miete           | 14 Okt 2024  | €4,000     | Wohnen       |
+      | Internet        | 18 Okt 2024  | €400       | Notwendig    |
+      | Lebensmittel    | 22 Okt 2024  | €1,000     | Notwendig    |
+    question: |
+      How much was spent on Notwendig in Okt 2024?
+    answer: |
+      €2,300 was spent on Notwendig in Okt 2024.
+
+  - context: |
+      | **Account** | **Balance** | **Type**    | **Interest** |
+      |------------|-------------|-------------|--------------|
+      | Girokonto  | €22,000     | Personal    | 0.01%        |
+      | Sparkonto  | €190,000    | Business    | 7.8%         |
+    question: |
+      What is the interest rate for the business Sparkonto?
+    answer: |
+      The interest rate for the business Sparkonto is 7.8%.
