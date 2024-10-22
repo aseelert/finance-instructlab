@@ -1,8 +1,17 @@
 version: 2
 created_by: bankingteam
 task_description: |
-    This skill enables the virtual banking agent to assist customers with banking
-    inquiries using clear and professional language.
+    This skill enables a virtual banking agent to assist customers with financial
+    inquiries using both English and German tabular data. The agent is capable of extracting
+    and interpreting key information from structured tables, such as account balances,
+    transaction histories, investment portfolios, and loan details. It processes these tables
+    to answer specific user queries, like calculating remaining balances, summarizing spending
+    categories, or providing investment return rates. By leveraging tabular data extraction,
+    the skill ensures that the banking agent can efficiently and accurately provide
+    context-aware responses based on the data provided, offering a professional and seamless
+    bilingual experience. The output is always delivered in English, ensuring consistency
+    in responses while making it adaptable to both German and English data inputs.
+
 seed_examples:
   # US English Examples
   - context: |
