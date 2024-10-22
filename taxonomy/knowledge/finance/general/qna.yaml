@@ -9,19 +9,15 @@ seed_examples:
       - question: |
           What is the difference between a savings account and a checking account?
         answer: |
-          A savings account is used for long-term savings and earns interest,
-          while a checking account is for everyday transactions and generally does
-          not earn interest.
+          A savings account is used for long-term savings and earns interest, while a checking account is for everyday transactions and generally does not earn interest.
       - question: |
           Can I transfer money between my savings and checking accounts?
         answer: |
-          Yes, you can transfer funds between savings and checking accounts using
-          online banking or by visiting a branch.
+          Yes, you can transfer funds between savings and checking accounts using online banking or by visiting a branch.
       - question: |
           Are there fees associated with checking accounts?
         answer: |
-          Some banks charge fees for checking accounts if you don't maintain a
-          minimum balance or meet specific conditions.
+          Some banks charge fees for checking accounts if you don't maintain a minimum balance or meet specific conditions.
 
   - context: |
       A customer is inquiring about applying for a personal loan and needs information
@@ -30,14 +26,11 @@ seed_examples:
       - question: |
           How do I apply for a personal loan?
         answer: |
-          To apply for a personal loan, you need to submit an application with
-          your personal and financial details. The lender will review your credit
-          history, income, and debts before approving the loan.
+          To apply for a personal loan, you need to submit an application with your personal and financial details. The lender will review your credit history, income, and debts before approving the loan.
       - question: |
           What documents are required for a personal loan application?
         answer: |
-          You need identification, proof of income, and a credit report to apply
-          for a personal loan.
+          You need identification, proof of income, and a credit report to apply for a personal loan.
       - question: |
           Can I apply for a loan online?
         answer: |
@@ -49,18 +42,15 @@ seed_examples:
       - question: |
           What is an interest rate?
         answer: |
-          An interest rate is the percentage charged by a lender for borrowing
-          money, calculated annually as a percentage of the loan amount.
+          An interest rate is the percentage charged by a lender for borrowing money, calculated annually as a percentage of the loan amount.
       - question: |
           What is the difference between a fixed and variable interest rate?
         answer: |
-          A fixed interest rate stays the same throughout the loan term, while a
-          variable interest rate can change over time based on market conditions.
+          A fixed interest rate stays the same throughout the loan term, while a variable interest rate can change over time based on market conditions.
       - question: |
           How does the interest rate affect my monthly payments?
         answer: |
-          A lower interest rate will reduce your monthly payments, while a higher
-          interest rate will increase the cost of borrowing.
+          A lower interest rate will reduce your monthly payments, while a higher interest rate will increase the cost of borrowing.
 
   - context: |
       A customer is having trouble accessing their online banking account.
@@ -68,18 +58,11 @@ seed_examples:
       - question: |
           What should I do if I can’t access my online banking account?
         answer: |
-          Ensure your internet connection is working, then try resetting your
-          password or contact customer support if the problem persists.
+          Ensure your internet connection is working, then try resetting your password or contact customer support if the problem persists.
       - question: |
           How do I reset my online banking password?
         answer: |
-          You can reset your password through the bank’s website or mobile app
-          using your security questions or recovery email.
-      - question: |
-          Is it safe to use public Wi-Fi for online banking?
-        answer: |
-          It is not recommended to use public Wi-Fi for online banking due to
-          potential security risks. Always use a private, secure connection.
+          You can reset your password through the bank’s website or mobile app using your security questions or recovery email.
 
   - context: |
       A customer is asking about the Annual Percentage Rate (APR) on credit cards.
@@ -87,18 +70,15 @@ seed_examples:
       - question: |
           What is APR?
         answer: |
-          APR, or Annual Percentage Rate, represents the yearly cost of borrowing,
-          including both interest and fees, expressed as a percentage.
+          APR, or Annual Percentage Rate, represents the yearly cost of borrowing, including both interest and fees, expressed as a percentage.
       - question: |
           How is APR different from the interest rate?
         answer: |
-          APR includes both the interest rate and any additional fees, while the
-          interest rate refers only to the percentage charged on the loan balance.
+          APR includes both the interest rate and any additional fees, while the interest rate refers only to the percentage charged on the loan balance.
       - question: |
           Can I lower the APR on my credit card?
         answer: |
-          You may be able to lower your APR by improving your credit score or
-          negotiating with your bank after a period of on-time payments.
+          You may be able to lower your APR by improving your credit score or negotiating with your bank after a period of on-time payments.
 
   - context: |
       A customer is confused about the term "mortgage" and its implications.
@@ -106,20 +86,207 @@ seed_examples:
       - question: |
           What is a mortgage?
         answer: |
-          A mortgage is a loan used to purchase a home, where the property itself
-          serves as collateral. The borrower repays the loan in monthly
-          installments, typically over 15, 20, or 30 years.
+          A mortgage is a loan used to purchase a home, where the property itself serves as collateral. The borrower repays the loan in monthly installments, typically over 15, 20, or 30 years.
       - question: |
           What is the difference between a fixed-rate and adjustable-rate mortgage?
         answer: |
-          A fixed-rate mortgage has the same interest rate throughout the loan term,
-          while an adjustable-rate mortgage (ARM) may change based on market
-          conditions.
+          A fixed-rate mortgage has the same interest rate throughout the loan term, while an adjustable-rate mortgage (ARM) may change based on market conditions.
       - question: |
           Can I pay off my mortgage early?
         answer: |
-          Many mortgages allow early repayment, but some may charge a prepayment
-          penalty. Check with your lender for the terms.
+          Many mortgages allow early repayment, but some may charge a prepayment penalty. Check with your lender for the terms.
+
+  - context: |
+      A customer in Germany is inquiring about the SCHUFA score and its impact on getting a loan.
+    questions_and_answers:
+      - question: |
+          What is a SCHUFA score?
+        answer: |
+          A SCHUFA score is a credit score used in Germany to evaluate a person's creditworthiness. It is based on financial history, such as existing loans and repayment behavior.
+      - question: |
+          How does my SCHUFA score affect my ability to get a loan?
+        answer: |
+          A higher SCHUFA score increases your chances of getting a loan with favorable terms, while a low score may result in higher interest rates or difficulty in getting approved.
+      - question: |
+          How can I improve my SCHUFA score?
+        answer: |
+          To improve your SCHUFA score, make sure to pay bills on time, avoid unnecessary loans, and regularly check your SCHUFA report for errors.
+
+  - context: |
+      A customer in the US wants to understand the difference between secured and unsecured loans.
+    questions_and_answers:
+      - question: |
+          What is a secured loan?
+        answer: |
+          A secured loan is a type of loan that is backed by collateral, such as a car or home. If the borrower fails to repay, the lender can take the collateral to recover their losses.
+      - question: |
+          What is an unsecured loan?
+        answer: |
+          An unsecured loan does not require collateral, and approval is based on the borrower's creditworthiness. Credit cards and personal loans are common examples of unsecured loans.
+      - question: |
+          Which type of loan has a lower interest rate?
+        answer: |
+          Secured loans typically have lower interest rates because they are less risky for the lender due to the collateral.
+
+  - context: |
+      A customer is interested in opening a high-yield savings account.
+    questions_and_answers:
+      - question: |
+          What is a high-yield savings account?
+        answer: |
+          A high-yield savings account is a type of savings account that offers a higher interest rate compared to a regular savings account, allowing your money to grow faster.
+      - question: |
+          Are there any requirements for opening a high-yield savings account?
+        answer: |
+          Some high-yield savings accounts may require a minimum deposit or balance to qualify for the higher interest rate.
+      - question: |
+          Is my money safe in a high-yield savings account?
+        answer: |
+          Yes, funds in high-yield savings accounts are typically insured by government agencies, such as the FDIC in the US or BaFin in Germany, up to a certain limit.
+
+  - context: |
+      A customer is curious about credit utilization and its impact on credit score.
+    questions_and_answers:
+      - question: |
+          What is credit utilization?
+        answer: |
+          Credit utilization refers to the percentage of your available credit that you are currently using. It is a key factor in determining your credit score.
+      - question: |
+          How does credit utilization affect my credit score?
+        answer: |
+          A lower credit utilization ratio (preferably below 30%) can positively impact your credit score, while high utilization may lower it.
+      - question: |
+          How can I reduce my credit utilization?
+        answer: |
+          You can reduce your credit utilization by paying down existing balances, requesting a credit limit increase, or avoiding new charges on your credit card.
+
+  - context: |
+      A customer in Germany wants to know about early repayment penalties for loans.
+    questions_and_answers:
+      - question: |
+          What is an early repayment penalty?
+        answer: |
+          An early repayment penalty is a fee charged by some lenders if you pay off your loan before the agreed-upon term. It compensates the lender for lost interest.
+      - question: |
+          Do all loans in Germany have early repayment penalties?
+        answer: |
+          Not all loans have early repayment penalties. It depends on the lender and the loan terms. Many mortgages in Germany may have such penalties, especially during the fixed-rate period.
+      - question: |
+          How can I avoid early repayment penalties?
+        answer: |
+          To avoid early repayment penalties, check your loan agreement for prepayment terms or negotiate with your lender before signing the loan contract.
+
+  - context: |
+      A customer is interested in understanding how debt consolidation works.
+    questions_and_answers:
+      - question: |
+          What is debt consolidation?
+        answer: |
+          Debt consolidation involves combining multiple debts into a single loan with a lower interest rate or more favorable terms, making it easier to manage payments.
+      - question: |
+          What are the benefits of debt consolidation?
+        answer: |
+          Debt consolidation can simplify your finances by reducing the number of payments you need to make and may lower your overall interest rate, saving you money.
+      - question: |
+          Can I consolidate my credit card debt?
+        answer: |
+          Yes, credit card debt is one of the most common types of debt to consolidate, often through a personal loan or balance transfer credit card.
+
+  - context: |
+      A customer in the US wants to understand how mortgage refinancing works.
+    questions_and_answers:
+      - question: |
+          What is mortgage refinancing?
+        answer: |
+          Mortgage refinancing involves replacing your existing mortgage with a new one, typically to get a lower interest rate or better terms.
+      - question: |
+          How do I know if refinancing is right for me?
+        answer: |
+          Refinancing may be right for you if current interest rates are lower than your existing rate, or if you want to change the loan term.
+      - question: |
+          Are there fees for refinancing my mortgage?
+        answer: |
+          Yes, there are closing costs and fees associated with refinancing, which may include appraisal fees, title insurance, and lender fees.
+
+  - context: |
+      A customer in Germany wants to know about KfW loans and their benefits.
+    questions_and_answers:
+      - question: |
+          What is a KfW loan?
+        answer: |
+          A KfW loan is a government-subsidized loan offered in Germany for energy-efficient home improvements or for first-time homebuyers.
+      - question: |
+          Who can apply for a KfW loan?
+        answer: |
+          KfW loans are available to homeowners, businesses, and individuals planning energy-efficient upgrades or buying their first home.
+      - question: |
+          What are the benefits of a KfW loan?
+        answer: |
+          KfW loans often have lower interest rates and may include grants or subsidies, making them an attractive option for improving energy efficiency or buying a home.
+
+  - context: |
+      A customer in the US wants to understand home equity loans.
+    questions_and_answers:
+      - question: |
+          What is a home equity loan?
+        answer: |
+          A home equity loan allows you to borrow against the equity in your home, typically as a lump sum with a fixed interest rate.
+      - question: |
+          How is a home equity loan different from a HELOC?
+        answer: |
+          A home equity loan provides a lump sum with a fixed rate, while a HELOC is a line of credit with a variable rate that you can draw from as needed.
+      - question: |
+          What can I use a home equity loan for?
+        answer: |
+          Home equity loans can be used for major expenses like home renovations, medical bills, or debt consolidation.
+
+  - context: |
+      A customer in Germany wants to understand the process of buying a property.
+    questions_and_answers:
+      - question: |
+          What are the steps to buying a property in Germany?
+        answer: |
+          The steps include finding a property, securing financing, signing a purchase agreement, and completing the transaction at a notary's office.
+      - question: |
+          What is the role of a notary in property transactions?
+        answer: |
+          In Germany, a notary oversees the signing of the purchase agreement, ensures all legal requirements are met, and registers the property with the land registry.
+      - question: |
+          Are there additional costs when buying property in Germany?
+        answer: |
+          Yes, additional costs include notary fees, property transfer tax, and sometimes a real estate agent's commission, typically totaling around 10-15% of the purchase price.
+
+  - context: |
+      A customer in the US wants to know about FHA loans.
+    questions_and_answers:
+      - question: |
+          What is an FHA loan?
+        answer: |
+          An FHA loan is a government-backed mortgage designed to help first-time homebuyers and those with lower credit scores qualify for a loan.
+      - question: |
+          What are the requirements for an FHA loan?
+        answer: |
+          Requirements include a minimum credit score of 580, a down payment of at least 3.5%, and mortgage insurance premiums.
+      - question: |
+          What are the benefits of an FHA loan?
+        answer: |
+          FHA loans offer lower down payment requirements and more flexible credit qualifications compared to conventional loans.
+
+  - context: |
+      A customer in Germany is asking about Bausparvertrag.
+    questions_and_answers:
+      - question: |
+          What is a Bausparvertrag?
+        answer: |
+          A Bausparvertrag is a home savings contract in Germany that helps individuals save for future home purchases or renovations with favorable loan conditions.
+      - question: |
+          How does a Bausparvertrag work?
+        answer: |
+          You save a set amount over a period of time, after which you are eligible for a low-interest loan to buy or renovate a property.
+      - question: |
+          What are the advantages of a Bausparvertrag?
+        answer: |
+          It offers a disciplined way to save for homeownership and provides access to low-interest loans when the savings phase is complete.
 
 document_outline: |
   This knowledge base provides comprehensive banking and financial information
@@ -127,6 +294,4 @@ document_outline: |
   credit terms.
 document:
   repo: https://github.com/aseelert/finance-instructlab
-  commit: 2a3470c871c86e9f879e7dd819620cbc46a15b76
-  patterns:
-    - banking-informations.md
+  commit: 2a347
