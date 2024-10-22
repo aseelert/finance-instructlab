@@ -9,18 +9,24 @@ seed_examples:
       - question: |
           What is the difference between a savings account and a checking account?
         answer: |
-          A savings account is used for long-term savings and earns interest, while a checking
-          account is for everyday transactions and generally does not earn interest.
+          A savings account is used for long-term savings and earns interest,
+          while a checking account is for everyday transactions and generally does
+          not earn interest.
       - question: |
           Can I transfer money between my savings and checking accounts?
         answer: |
-          Yes, you can transfer funds between savings and checking accounts using online banking
-          or by visiting a branch.
+          Yes, you can transfer funds between savings and checking accounts using
+          online banking or by visiting a branch.
       - question: |
           Are there fees associated with checking accounts?
         answer: |
-          Some banks charge fees for checking accounts if you don't maintain a minimum balance or
-          meet specific conditions.
+          Some banks charge fees for checking accounts if you don't maintain a
+          minimum balance or meet specific conditions.
+      - question: |
+          Do savings accounts have withdrawal limits?
+        answer: |
+          Yes, savings accounts may have withdrawal limits per month as regulated
+          by banking authorities to encourage saving.
 
   - context: |
       A customer is inquiring about applying for a personal loan and needs information
@@ -40,6 +46,11 @@ seed_examples:
           Can I apply for a loan online?
         answer: |
           Yes, most banks offer the option to apply for personal loans online.
+      - question: |
+          How long does it take to get approved for a personal loan?
+        answer: |
+          Approval times vary by lender, but typically you can receive a decision within a few
+          business days after submitting your application.
 
   - context: |
       A customer is confused about how interest rates work for loans.
@@ -59,6 +70,11 @@ seed_examples:
         answer: |
           A lower interest rate will reduce your monthly payments, while a higher interest rate
           will increase the cost of borrowing.
+      - question: |
+          Can interest rates be negotiated?
+        answer: |
+          Yes, depending on your creditworthiness and relationship with the bank, you may be able
+          to negotiate a lower interest rate.
 
   - context: |
       A customer is having trouble accessing their online banking account.
@@ -73,6 +89,16 @@ seed_examples:
         answer: |
           You can reset your password through the bank’s website or mobile app using your security
           questions or recovery email.
+      - question: |
+          Why am I receiving a locked account message when trying to log in?
+        answer: |
+          Your account may be locked due to multiple failed login attempts. Contact customer support
+          to unlock your account.
+      - question: |
+          Can I access my online banking from multiple devices?
+        answer: |
+          Yes, you can access your online banking from any compatible device, such as computers,
+          smartphones, and tablets, as long as you have your login credentials.
 
   - context: |
       A customer is asking about the Annual Percentage Rate (APR) on credit cards.
@@ -92,6 +118,11 @@ seed_examples:
         answer: |
           You may be able to lower your APR by improving your credit score or negotiating with your
           bank after a period of on-time payments.
+      - question: |
+          What factors influence the APR I receive on a credit card?
+        answer: |
+          Your credit history, income, existing debt, and the bank’s policies all play a role in determining
+          the APR you are offered.
 
   - context: |
       A customer is confused about the term "mortgage" and its implications.
@@ -112,6 +143,11 @@ seed_examples:
         answer: |
           Many mortgages allow early repayment, but some may charge a prepayment penalty. Check
           with your lender for the terms.
+      - question: |
+          What factors should I consider when choosing a mortgage term?
+        answer: |
+          Consider your financial goals, monthly payment affordability, interest costs over the loan
+          term, and how long you plan to stay in the home.
 
   - context: |
       A customer in Germany is inquiring about the SCHUFA score and its impact on getting a loan.
@@ -131,6 +167,10 @@ seed_examples:
         answer: |
           To improve your SCHUFA score, make sure to pay bills on time, avoid unnecessary loans,
           and regularly check your SCHUFA report for errors.
+      - question: |
+          How often is my SCHUFA score updated?
+        answer: |
+          Your SCHUFA score is updated regularly as new information about your financial behavior is reported.
 
   - context: |
       A customer in the US wants to understand the difference between secured and unsecured loans.
@@ -150,6 +190,10 @@ seed_examples:
         answer: |
           Secured loans typically have lower interest rates because they are less risky for the
           lender due to the collateral.
+      - question: |
+          Can I convert an unsecured loan to a secured loan?
+        answer: |
+          Yes, some lenders may allow you to convert an unsecured loan to a secured loan by providing collateral.
 
   - context: |
       A customer is interested in opening a high-yield savings account.
@@ -169,6 +213,11 @@ seed_examples:
         answer: |
           Yes, funds in high-yield savings accounts are typically insured by government agencies,
           such as the FDIC in the US or BaFin in Germany, up to a certain limit.
+      - question: |
+          Can I withdraw money from a high-yield savings account at any time?
+        answer: |
+          Yes, you can withdraw funds at any time, but some accounts may limit the number of withdrawals
+          per month or charge fees for excessive transactions.
 
   - context: |
       A customer is curious about credit utilization and its impact on credit score.
@@ -188,6 +237,10 @@ seed_examples:
         answer: |
           You can reduce your credit utilization by paying down existing balances, requesting a credit
           limit increase, or avoiding new charges on your credit card.
+      - question: |
+          What is considered a good credit utilization ratio?
+        answer: |
+          Generally, a credit utilization ratio below 30% is considered good, but lower is better for your credit score.
 
   - context: |
       A customer in Germany wants to know about early repayment penalties for loans.
@@ -207,6 +260,10 @@ seed_examples:
         answer: |
           To avoid early repayment penalties, check your loan agreement for prepayment terms or
           negotiate with your lender before signing the loan contract.
+      - question: |
+          Are there exceptions to early repayment penalties?
+        answer: |
+          Some lenders may waive early repayment penalties under certain conditions, such as financial hardship or after a specific period.
 
   - context: |
       A customer is interested in understanding how debt consolidation works.
@@ -226,6 +283,11 @@ seed_examples:
         answer: |
           Yes, credit card debt is one of the most common types of debt to consolidate, often
           through a personal loan or balance transfer credit card.
+      - question: |
+          Are there any drawbacks to debt consolidation?
+        answer: |
+          Potential drawbacks include extending the loan term, which could lead to paying more interest
+          over time, and possible fees associated with consolidation loans.
 
   - context: |
       A customer in the US wants to understand how mortgage refinancing works.
@@ -245,6 +307,11 @@ seed_examples:
         answer: |
           Yes, there are closing costs and fees associated with refinancing, which may include
           appraisal fees, title insurance, and lender fees.
+      - question: |
+          How long does the refinancing process take?
+        answer: |
+          The refinancing process typically takes 30 to 45 days, depending on the lender and your
+          financial situation.
 
   - context: |
       A customer in Germany wants to know about KfW loans and their benefits.
@@ -264,6 +331,11 @@ seed_examples:
         answer: |
           KfW loans often have lower interest rates and may include grants or subsidies, making
           them an attractive option for improving energy efficiency or buying a home.
+      - question: |
+          How do I apply for a KfW loan?
+        answer: |
+          You can apply for a KfW loan through participating banks or directly with KfW, providing
+          necessary documentation related to your project or purchase.
 
   - context: |
       A customer in the US wants to understand home equity loans.
@@ -283,6 +355,11 @@ seed_examples:
         answer: |
           Home equity loans can be used for major expenses like home renovations, medical bills, or
           debt consolidation.
+      - question: |
+          What are the risks of taking out a home equity loan?
+        answer: |
+          The primary risk is that your home serves as collateral, so failure to repay the loan could
+          result in foreclosure.
 
   - context: |
       A customer in Germany wants to understand the process of buying a property.
@@ -302,6 +379,11 @@ seed_examples:
         answer: |
           Yes, additional costs include notary fees, property transfer tax, and sometimes a real estate
           agent's commission, typically totaling around 10-15% of the purchase price.
+      - question: |
+          How long does the property buying process take in Germany?
+        answer: |
+          The process can take several weeks to a few months, depending on financing, negotiations, and
+          legal procedures.
 
   - context: |
       A customer in the US wants to know about FHA loans.
@@ -321,6 +403,11 @@ seed_examples:
         answer: |
           FHA loans offer lower down payment requirements and more flexible credit qualifications
           compared to conventional loans.
+      - question: |
+          Can I refinance an existing FHA loan?
+        answer: |
+          Yes, you can refinance an existing FHA loan through programs like the FHA Streamline Refinance,
+          which may offer lower interest rates with minimal documentation.
 
   - context: |
       A customer in Germany is asking about Bausparvertrag.
@@ -340,6 +427,11 @@ seed_examples:
         answer: |
           It offers a disciplined way to save for homeownership and provides access to low-interest loans
           when the savings phase is complete.
+      - question: |
+          Are there any penalties for withdrawing funds early from a Bausparvertrag?
+        answer: |
+          Yes, withdrawing funds before the contract terms are met may result in penalties or loss of
+          benefits associated with the contract.
 
 document_outline: |
   This knowledge base provides comprehensive banking and financial information
@@ -348,3 +440,5 @@ document_outline: |
 document:
   repo: https://github.com/aseelert/finance-instructlab
   commit: 2a347
+  patterns:
+    - banking-informations.md
