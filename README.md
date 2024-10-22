@@ -89,11 +89,11 @@ ilab data generate \
  --pipeline full \
  --sdg-scale-factor 10 \
  --endpoint-url http://localhost:8080/v1 \
- --output-dir ./mistral-finance \
+ --output-dir ./ibm-granite-finance \
  --batch-size 8 \
  --chunk-word-count 1000 \
  --num-cpus 8 \
- --model mistralai/mistral-large
+ --model ibm/granite-20b-multilingual
  ```
 
 #### Instructlab Cleanup
