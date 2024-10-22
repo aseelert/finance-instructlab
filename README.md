@@ -62,10 +62,10 @@ mkdir -p ~/.local/share/instructlab/taxonomy/compositional_skills/grounded/finan
 mkdir -p ~/.local/share/instructlab/taxonomy/knowledge/finance/general
 ```
 ```bash
-cp finance-instructlab/taxonomy/knowledge/finance/general/qna.yaml \
+cp -f finance-instructlab/taxonomy/knowledge/finance/general/qna.yaml \
 ~/.local/share/instructlab/taxonomy/compositional_skills/grounded/finance/table-analytics/qna.yaml
 
-cp finance-instructlab/taxonomy/knowledge/finance/general/qna.yaml \
+cp -f finance-instructlab/taxonomy/knowledge/finance/general/qna.yaml \
 ~/.local/share/instructlab/taxonomy/knowledge/finance/general/qna.yaml
 ```
 
