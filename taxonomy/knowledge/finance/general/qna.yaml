@@ -439,6 +439,6 @@ document_outline: |
   credit terms.
 document:
   repo: https://github.com/aseelert/finance-instructlab
-  commit: 2a347
+  commit: 2a3470c871c86e9f879e7dd819620cbc46a15b76
   patterns:
     - banking-informations.md
